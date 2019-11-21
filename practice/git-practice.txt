@@ -1,0 +1,149 @@
+1.Git ----> Distributed version control system 
+2.GitHub ----> core hosting platform for  version control  aloborate system   
+3.created by --->Linus torvald (git/linux curnol)
+4.open source
+5.SCM   ----> software configuration management  / source code management 
+6.Centralized version control system -----> a server can maintain the all the versions data  
+                            drawback --> if server fails we can loss the all the data
+7.Distributed version control system ----> every system can maintain the (copy) local repository if server fails we can push from                       
+                                            the local repository(place of storing all the project  files)
+8.Trunk based development ---> we can create branches
+9.sudo apt-get install git
+
+basic and repeatedly used commands:-
+1.git init -----> initialize git local repository    
+2.git add <file> ----> Add files to index  
+3.git add . / git add -A ----> add all files
+4.git add file1,file2,file3 ---> add specified files
+5.git status ----> Check status 
+6.git commit ---> Commit changes in index 
+7.git commit -m "commit message" 
+8.git -a  commit -m "commit message" ----> to commit all the files
+9.git push   ----> Push to remote repository
+10.git pull   ----> Pull latest from remote repository(git fetch + git merge)
+                    it make changes in local repository as well as working directory
+11.git clone ----> clone repository into new directory
+12.merge    ----->git merge source name/branch
+13.git branch branch_name ----> to create  new branch
+14.git checkout name-of-the-branch -----> to change one branch to another branch 
+                                          create another file
+                                          git add file
+                                          commit
+15.now check ls it shows all the files including master branch files
+16.now checkout to master branch 
+17.if check ls it shows only master branch files excluding new-branch files
+18.git merge source_branch
+     git merge new-branch
+19.go to the new branch and modify the content of the file 
+   git checkout new-branch
+   change content
+  commit the changes
+20.go to master branch
+21.cat .git/config ----> represents the location of the Git repository 
+22.re-base ----> linear work flow  >>> merged all the work into the master
+   lets checkout to new-branch then create new files
+   And add the files ---> git add -A
+   commit the files
+   lets checkout to master
+   now if u check ls new-branch files wont' b  appeared
+   then re-base the new-branch ---> git re-base  new-branch
+   now check with ls in master branch all files will be shown
+
+revert:-
+remove commited logs
+1.revert back to previous version changes
+   create one file ,add,commit it 
+   and then add some more content in it ,add,commit (git commit -a -m" commit message")
+   Now go to git log copy the first 8 numbers of the first commit log of the file
+   And git checkout 8numbers file name 
+   Now check the content of the file it will give the first time what you wrote in file 
+
+ssh key generation:
+  in master branch
+  type in cmd ssh-keygen
+  enter 
+  cat give save in path here ----> key generated 
+  copy the key and go to the central repository -->setting ---> ssh ---> title and paste the key
+  come to the terminal ssh -t ssh path (from central repository)
+  cd ~username ---> cat .ssh/id_rsa.pub
+  ssh -T git@github
+  git remote add origin git@github.com:munnisharapidops/training.git
+  move to master branch 
+  git push origin master
+
+1.rm -rf directory name ---->recursively delete all files in directory
+2.git checkout -b branch name ---> to checkout and create branch
+3.git remote rm origin ---> to delete origin
+4.git clone url ----> retrieve an entire repository from a hosted location via UR
+5.git -D branch-name --->to delete branch
+6.can handle more than one remote
+7.reset ---> to change the  head 
+8.tag----> it is one type of note for the particular change
+9.fetch ----> 
+           sync up remote repository into local with out any changes on original copy
+           there is no chance to get conflicts
+
+rename branch
+  git branch -m new-branch-name ------> rename from the current branch
+  git branch -m old-name new-name ------> if u r in different branch
+  git push origin :old-name new-name ------->delete old name in remote push new-name from local
+                                                           first we have to change the name in local and then push to remote
+  git push -u origin branch-name ----> push branch-name into remote
+   
+head::
+  Always pointing to the most recent commit on the current working tree
+git branch ----> display branches list
+git log ----->view information about previous commits
+git log --all  -----> display all commits
+git lob -3  ---->View n most recent commits
+git log --oneline ---->get the minimum information in a single line per commit,show the first 7 characters of the commit
+git log --stat ---> shows the files that have been modified including the no.of lines that have been added/removed in the file
+git log -p(patch) --->display the files that have been modified ,location of the lines that have been added/removed 
+git show ---->displays all the default information but for only one commit.if commit is not specified then the output is same as -p
+                      git show 541946ea2
+git shortlog ---->show how many files committed by author by group
+git shortlog -s ---> show the count of the files committed by author (-n show commit messages also)
+tagging:-
+Tagging is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1)
+git tag <tag-name> ---> to create a tag
+git tag -a <tag name > (version)----> create tab with opening the text editor we can enter msg
+git tag -a <tag name> -m "message" ---> create a tag with the message 
+git tag <tag name>-lw ---> create lightweight tag
+git tag/ git tag -l  ---> list the tags
+commits are used to edit the messages
+ex: git tag -a  v1.4 2fc64591b9c31384470b8ecf38f9269b7b329edc  using this hash key we can modify the content present in the tag
+with using -f we can open forcefully open the existing tag
+git checkout <tag name> ----> can view the state of the repo but the head will be detached means it will not save any commits so for that we have to create  branch
+git checkout -b <tag name>-----> enter into the branch now it won't create any issues
+git push origin <tag name> ---> to push tag into remote repository
+        git tag -d <tag name> ------> to delete tag
+Stash:-
+stash is used for temporary store file in local .These are not transferred to remote
+git is a carry over from branch to branch
+git stash save "message"  -----> save the changes in stash with message
+git stash list ------> List out all the stashes with their id 
+git stash apply -----> Re-apply the changes
+git stash pop ----> remove the changes from the stash
+git stash drop stash{id} ---> delete particular stash
+git stash clear ---->delete all
+git stash show -----> display name with some information
+git stash show --name-only ---->display name only
+Note:-
+git checkout -- ... ----->To discard changes in   working directory    
+git add ... ----> To update what will be committed 
+git checkout filename ----> discard changes in specific file            
+git checkout . ---> all the changes are discarded in WD
+reset :-
+used to unstage a file
+git reset HEAD * ---> unstage all the files
+git reset HEAD filename ----> unstage a specific file
+Reset Types:-
+soft ---->moves the all the changes into staging area
+                    git reset --soft 
+mixed / reset  -----> moves the changes back into working director  
+hard ----> moves the changes into trash
+                   git reset --hard
+revert:-
+remove commited changes
+          git revert commit -----> remove that particular commit and save it
+          git revert -n commit -----> remove the commit but not save it automatically we have to save manually 
