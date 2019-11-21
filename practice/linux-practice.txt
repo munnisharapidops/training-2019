@@ -1,0 +1,119 @@
+ pwd - current working directory path
+cat > filename --> to create a file
+cat >> filename --> to  add content  
+ls - listing files and directories (ls -l listing files in long format)
+cd - change the wd 
+            --> cd(change wd(working directory) into hd (home directory))
+           -->cd ~username (change wd into hd to specified user)
+           -->cd-  (wd to previous one)
+           -->cd.. (current wd to parent wd)
+less - view text files
+files - classify file contents
+type - info about cmnd type
+which -locate cmnd
+help - reference page
+man - online cmnd refe
+sort - sort lines of text files(increasing /decreasing)
+uniq- delete duplicates(uniq filename)
+grep - pattern matching 
+pr - page breakes
+head -display file first 10 lines
+tail - display file last 10 lines
+tr -  convert upper to lower
+echo - print statement
+ps - list the processes running on the system
+kill - send a signal to one or more processes (usually to "kill" a process)
+tar tvf archive_name.tar
+
+
+jobs - an alternate way of listing your own process
+ls > file_list.txt - copy ls file data into file_list 
+ls >> file_list.txt -copy ls file data into file_list after remodifictaion
+sort < file1>file2 - sort the output of file1 > file2
+wildcards used for characters and patterns used for files
+while copy if we use -i it shows prompt message
+while copying directories -R or -D
+$PATH-> return / separated list of directory
+EXPORT $PATH=PATH:directory name ->add new directory to the path
+file manipulations
+cp-copy files nd directories
+mv- move r rename files nd directories(move data and delete the file)
+rm - remove f nd d
+mkdir- create directories
+wildcards
+* - match any character
+? - match single character
+[characters] - [:digits:],[:alnum:],[:alpha:],[:upper:],[:lower:]
+[!characters] - match the character i.e not a member of character set
+pipe lines
+connection of commands - ls -l | less
+permissions
+chmod - modify file access rights
+su - temporarily become the superuser
+sudo - temporarily become the superuser
+chown - change file ownership
+chgrp - change a file's group ownership
+777 - rwxrwxrwx No restrictions on permissions
+755 - rwxr-xr-x The file's owner may read, write, and execute the file. All others may read and execute the file
+700 - (rwx------)  The file's owner may read, write, and execute the file. Nobody else has any rights
+666 - (rw-rw-rw-) All users may read and write the file.
+644 - (rw-r--r--) The owner may read and write a file, while all others may only read the file
+600 - (rw-------) The owner may read and write a file. All others have no rights
+function --> without return statement function will not work
+top-down design --> allows you to break large tasks into small tasks
+show_uptime --> show how long system has been running (uptime)
+drive_space -->show how much space is utilized by the user in drive(df)
+home_space-->show how much space is utilized by the user in home directory(du -s /home/*)
+<<  --> here document
+<<-  --> remove white/tab spaces 
+variable --> store some information reffered by name
+$ --> used to print variables / commands
+  $(date +"%x %r %Z") - display time and date 
+flow controll
+if --> conditional statement
+test --> test the expression
+bc -->used for perform airthmetic expressions
+case ---> used for equalent program
+    case word in
+        patterns ) commands ;;
+     esac
+loops
+ while
+untill
+for
+useradd ---> this command create the user in cmd
+to create user first we have to move into the admin and then root then only can create user
+   --->su - rapidadmin  >>>>admin
+   --->password
+   --->su sudo   >>>> root
+   --->su - username  >>> creation of user
+su means switch user
+su sudo su means superusr2
+commads to create user >>> useradd
+groupadd >> to create group
+useradd >>> create user 
+  ---->useradd -G groupname username >>> create user in particular group
+usermod >>> edit the already existing user into another group
+   --->usermod -G groupname username
+wildcars used for characters and patterns used for files
+while copy if we use -i it shows prompt message
+while copying directories -R or -D
+pipelines->connect multiple commands 
+  ex: ls -l | less
+sort-> sort from largest to smallest
+-r is for recursive sort
+expansions:
+   pathname
+   brace 
+  airthmatic
+$PATH-> return ./ seperated list of directory
+EXPORT $PATH=PATH:directory name ->add nwe directory to the path
+COMMANDS :1.aliases
+                          2.shell
+<< --> here document
+<<- =>removes the white space
+top-down design --> allows you to break large tasks into small tasks
+function --> without return statement function will not work
+show_uptime --> show how long system has been running (uptime)
+drive_space -->show how much space is utilized by the user in drive(df)
+home_space-->show how much space is utilized by the user in home directory(du -s /home/*)
