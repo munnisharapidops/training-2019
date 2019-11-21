@@ -1,0 +1,129 @@
+  1.Write a shell script that adds an extension “.new” to all the files in the directory.
+     for f in *; do 
+     mv $f `basename $f `.new; 
+     done;
+
+
+2.Delete file which has special characters. “ -“, “—“, “*”, “$”
+   rm -v -- -file   --> to delete -file
+   rm _file     ---> to delete  _file
+   rm *file ---> to delete *file
+   rm $ file ---> to delete $ file
+
+
+3.Write a shell script that take two input numbers from user at runtime and display arithmetic
+    operation on that numbers, find out max, & min number from them, find weather that numbers
+    negative or positive.
+   
+     exc/task3.sh
+#!/bin/bash
+ first_num=0
+ second_num=0
+  echo -n "Enter the first number --->"
+  read first_num
+  echo -n "Enter the second number --->"
+  read second_num
+  if [ first_num > second_num ] ; then
+ echo "$first_num is maximum number  compared to $second_num"
+else 
+  echo "$first_num is minimum number compared to  $second_num" 
+fi
+ if [ first_num > 0 ]; then 
+  echo "$first_num is positive"
+ else
+ echo "$first_num is negative"
+ fi
+if [ second_num >0 ] ; then 
+ echo "$second_num is positive"
+ else 
+echo "$secong_num is negative"
+fi
+ 
+4.Write a shell script that take one input number from user and print 1 to n number using three
+   loops (For, while, until). (N = entered number)
+    
+#!/bin/bash
+ n=0
+  echo -n "Enter value of n --->"
+  read n
+  echo "result for for-loop"
+   for((i=1;i<=n;i++));
+    do
+    echo $i
+  done
+
+ echo "result for while loop"
+i=1
+ echo -n "enter value of a --->"
+ read a
+ while  ((i<=a))
+ do
+ echo $i
+i=`expr $i + 1` 
+ done
+
+echo "result for untill"
+i=1
+echo -n "Enter value of n ---->"
+read n
+until ((i>=n+1))
+do
+echo $i
+i=$(( i+1 ))
+done
+
+5.Write a shell script to display the last updated file of the newest file in a directory.
+      ls  -t1 | head -n 1     ---> it will give recently updated file in present directory (-l in long format)
+      ls -t1 | head -n 5     ---->it will give recently updated 5 files in present directory
+
+
+6.Write a shell script to get the total count of the word “Linux” in all the “.txt” files and also across
+   files present in sub directories.
+     
+  grep -c linux *.txt ---> it will gives the count of the word 'linux' in all files with .txt    in present directory
+ grep -c -R 'linux' ---> it will gives the count of the word in present directory file and sub-directory as well
+
+   
+7.Write a shell script that copy all the directories, subdirectories and files from one location to
+  another specific location.
+   cp -R source_path destination_path     
+
+8.Display specific number of lines as follow:
+     1. Display first and last 10 lines of file contains
+     2. Display line no. 3 to 8 from file contains.
+    3. Display 7 lines and start from second last line in reverse manner.
+   
+    head task8.sh -->display first 10 line of the file
+            tail task8.sh --->display last 10 lines of the file
+    sed -n '3,8p' task8.sh ---> to display from 3 to 8 lines of the task8.sh file
+   tac  ---> print in reverse order 
+           tac task8.sh > task8_3.sh ---->copy task8.sh file data in task8_3.sh in reverse order
+           sed -n '2,7p' task8_3.sh ----> print 2 to 7 lines of task8_3.sh and from line number 2 to 7 in reverse order of task8.sh file
+
+9.Perform following task:
+1. Add two new users and two groups
+2. Login as one user and then create new file
+3. Send created file from one user to another user
+4. Login as second user and copy that file from user2 to user1(in same system) 
+  sudo useradd username | su - username
+         sudo ca ask the password su wont ask for the password
+         sudo passwd username ---> to set password for the user
+          sudo useradd munni
+          sudo  useradd jasmine
+         two users created
+         gedit /etc/passwd ----> t show the created user
+sudo groupadd gropuname ---> to create group 
+      sudo group  training
+      sudo -a -G training munni ----> to add existing user into group
+      grep group_name /etc/group ---> show which user is in this group
+su - username ---> to enter into he user we can perform what we want  
+       cat > file ---> this file created in this particulat user
+  sudo source_path destination path ---> send file from souece user to destination user
+      sudo /home/munni/sample.txt  /home/jasmine/sample1.txt
+
+10.Task to find all files from folder where file contains string 'abc'
+   grep  -R 'abc' -----> find abc in all fles
+   ls abc *----> to list the all files starting with abc
+   ls *abc* ---->to list the all files which are havng abc
+   ls *abc----> to list the all files ending with abc
+
