@@ -1,0 +1,93 @@
+1.html -----> markup language
+2.http ---> method to exchange these html documents
+3.The doctype  defines document type and html version
+4.html element ----> root of the document
+5.head element contains document meta data(title,meta,link,style)
+6.meta tag ---> used for search engine optimization.Don't directly impact on web page
+7.body element contains content to be displayed in browser
+8.links available in web pages called hypertext
+9.center tag can put any content in the center of the page or table cell
+10.some tags don't have closing tags those are called void elements
+11.The lang attribute allows you to indicate the main language used in a document
+12.<b>  -----> Text can appear in bold
+13.<i> -----> displayed in italicizes
+14.<tt> ----> mono-spaced font --->in a mono-spaced font, however, each letter has the same width
+15.<em>...</em> element is displayed as emphasized text
+16.Anything that appears within<ins>...</ins>element is displayed as inserted text.
+17.Anything that appears within<del>...</del>element, is displayed as deleted text.
+18.<big>...</big>element is displayed one font size larger than the rest of the text surrounding
+19.<small>...</small>element is displayed one font size smaller than the rest of the text 
+20.<strong>...</strong> element is displayed as important text
+21.The dir attribute allows you to indicate to the browser about the direction in which the text should flow
+                rtl----> right to left
+                ltr ----> left to right
+          When dir attribute is used within the <html> tag, it determines how text will be presented within the entire document
+
+HEAD ELEMENTS:-
+1)<title> --->display title in display bar on window
+2)<meta> ----> Allows to provide meta data about the document
+3)<script> --->Make web pages more interactive
+4)<style> ---> used to apply css
+5)<link> ----> Provide resource links related to the page
+6)<base> --->allows to specify a base address (linking between the documents)
+
+BODY ELEMENTS:-
+1)text --->sizes and styling of text
+2)list ---> set of items.Ordered and Unordered fashion
+3)link ---> connect one document to another
+4)table ---> displaying data
+5)images ---> visual action on page
+
+HEADINGS:-
+1)h1 --->Primary heading
+                   Should appear only once in page
+  h2    |
+  h3    |      
+  h4    |
+  h5    |
+  h6    | ----> secondary heading
+
+TEXT BREAKING AND WHITE SPACES:-
+1)<pre> ---> display text in specific manner
+2)<br> ---> Add line break
+3)<hr> ---> Add horizontal line
+4)&nbsp --->A non-breaking space is a space that will not break into a new line
+5)&lt ---> for <  symbol
+6)&gt ---> for > symbol
+7)&copy ---> copy right symbol
+8)Reference text:-
+9)<sup> ---> Superscript text appears half a character above the normal line, and is sometimes rendered in a smaller font(like power position)
+10)<sub> --->Subscript text appears half a character below the normal line(like base position)
+11)<cite> ---> defines the title of the work
+12)<abbr> --->defines an abbreviation or an acronym, like "HTML", "Mr.", "Dec.", "ASAP", "ATM"
+                           eg:-  The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.
+13)<code> --->Piece of computer code
+14)<kbd> ---> Key board input 
+15)<blockquote> ---> Block element
+16)<q> ---> for quotes
+
+LIST:-
+1)unordered list --->Used to create a list of related items, in no particular order.
+2)ordered list --->Used to create a list of related items, in a specific order.
+3)definition list --->Used to create a list of terms and their descriptions
+                                     <dl>
+                                               <dt>      </dt>
+                                               <dd>        </dd>
+                                      </dl>
+                                      dt --->term
+                                       dd--->definition
+4)<a href=" "> ----> anchor tag navigate to the destination bar
+5)<a href=" ----#id"> ---> open this link at particular id in target page
+
+TABLES:-
+1)<th> --->table header
+2)<tr> --->table row
+3)<td> ---> table data
+
+NOTE:-
+	media query is used to make web pages responsive
+        min-width ----> grater than r eual to
+        max-width ---->less than r equal to
+        @media only screen and (min-width / max-width : 600px) {....}
+        
+        @media only screen (max-width:2000px) and (min-width:1000px) {....}
