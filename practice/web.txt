@@ -1,0 +1,52 @@
+1)Tim Berners Lee ---->Father of the web
+2)www ---> huge collection of pages information
+3)information system of interlinking hypertext documents
+4)web pages --->contain text ,pictures,videos
+5)web also contains navigation's called hyperlinks
+6)2-tire architecture
+
+web page:-
+1)collection of text,video,audio,hyper links
+2)created by html ,xml,javascript
+
+web site:-
+1)Collection of inter linking webpages
+2)Accessed through url(uniform resource locator)
+3)url ----> global address of web document
+             protocol and address name
+             eg:- http://www.evernote.com
+             http ----> protocol   www.evernote.com----> Address name
+4)there are 2 types of websites
+              static ---> information site
+                                it contain all the information.eg-personal website
+              Dynamic ---> intaractive site
+                                  
+web application (web app):-
+1)web app can run in browser with the help of url
+
+2)Client:-
+      Receive the user requirement and convert it into request and send the request to browser
+
+3)Server:-
+   Wait for the client request after receiving the request it will send response
+
+4)ip:-
+   internet protocal
+  identifier for the device
+
+5)ISP:-
+   Internet Service provider
+    middle man between the client and server
+6)DNS:-
+    Domain name system
+     when we enter the website name it will search for the ip address for that particular domain
+7)TCP/IP:-
+   Transmission Control Protocol/Internet Protocol
+    Used as a standard for transmitting data over the network
+
+8)HTTP:-
+Hyper Text Transfer Protocol
+The protocol that used  web browsers and web servers communicate with each other over the network
+
+9)Port number:-
+   It serves as a way to identify a specific process on a server that network requests could be forwarded to
