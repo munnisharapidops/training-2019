@@ -1,0 +1,212 @@
+1)css ---> cascading style sheet.style sheet language used for describing the presentation of a document
+  
+2)internal style sheet
+      present in the top of the web page
+3)External style sheet
+     separation of concerns
+      faster loading
+      include witha the help of link <link type="stylesheet"  href="style.css">
+4)inline style sheet
+    present in the tags
+
+SELECTORS:-
+1)tag ---->  page-wide
+                easy to identify.   ex:<p>  ---> p is tag selector
+2)class -----> Apply every element with that class
+                   indicate with dot(.)
+3)id ---->Apply to one specific tag
+            indicate with #
+             i can be used by javascript
+             good for link to specific part of  the page
+
+PSEUDO ELEMENTS:-
+1)    finding element what you want.don't need to add anything to the elements these are working based on relation ships(first     
+                                                                                                                                                                                         child,last child,n  child)
+2)    types:-
+        1.first-of-type 
+               .class :first-child{
+                                             property:value;
+                                            }
+         2.last-of-type
+         3.nth-of-type
+              ul  :nth-child(even/odd){
+                                                        property:value;
+                                                        }
+3)  finding adjacent sibling using + sign
+4)  finding all adjacent sibling using ~ sign
+5)  not ----> not set with pseudo class
+ 
+INHERITANCE:-
+1.Descendants inherit style from the ancestors
+2.saves time and effort
+3.Some properties are not inherited
+        placement tags
+         Borders
+         Margins
+        Background colors
+4.when there are conflicts,they are resolved by the specificity rules
+
+FONTS:-
+1)serif
+2)san-serif
+ 
+WEB-FONTS:-
+1)download font but these are creating some conflict
+2)google-fonts
+
+JAZZINGjazzing up text:-
+1)font-size:
+               em & percentage (.5 em=50%)
+               px
+               keywords(large,small,medium,x-large)
+2)font-color:
+              rgb
+              rgba
+3)font-style:
+            italic 
+            bold
+            normal
+4)capitalize -(text-transfermation):
+              uppercase
+              lowercase
+              capitalize(first letter capital)
+              font-variant -->for small caps
+              text-decoration -->for underline r overline
+5)kerning
+           Space between the letters/words
+6)leading
+        line-height:128%
+
+margin,border and padding:-
+1)understanding boxes:
+                                       A paragraph is a box
+                                       An image is a box
+                                       each tag is a box
+                                       boxes with in boxes
+2)Margin :
+                The space that separates the boxes
+3)Padding :
+                The space between the border and the content
+4)Border :
+               The line around each edge of  the box
+                border apply for all dimensions
+                border-top/bottom/right/left  for individual sides
+                border-style for styling
+                border-color for give color to border
+                border-width for set the width
+                border-radius for round corner
+5)block level tags :- <p> , <div>
+6)inline tags :-  <strong> ,<em> , <image>
+    
+we can apply margins and padding both block level and inline tags
+But inline boxes do not have top and bottom margins
+
+Navigation bar:-
+1)navigation bar is a set of links(list of diff areas)
+   list call for <ul>
+    remove the bullets (list-style-type:none)
+    eliminate padding and margin
+   set the display to inline block to eliminate new line for describing the presentation of a document
+  
+internal style sheet
+      present in the top of the web page
+External style sheet
+     separation of concerns
+      faster loading
+      include witha the help of link <link type="stylesheet"  href="style.css">
+inline style sheet
+    present in the tags
+Selectors
+tag ---->  page-wide
+                easy to identify.   ex:<p>  ---> p is tag selector
+class -----> Apply every element with that class
+                   indicate with dot(.)
+id ---->Apply to one specific tag
+            indicate with #
+             i can be used by javascript
+             good for link to specific part of  the page
+pseudo elements:-
+    finding element what you want.don't need to add anything to the elements these are working based on relation ships(first     
+                                                                                                                                                                                         child,last child,n  child)
+    types:-
+        1.first-of-type 
+               .class :first-child{
+                                             property:value;
+                                            }
+         2.last-of-type
+         3.nth-of-type
+              ul  :nth-child(even/odd){
+                                                        property:value;
+                                                        }
+  finding adjacent sibling using + sign
+  finding all adjacent sibling using ~ sign
+  not ----> not set with pseudo class
+
+Inheritance:-
+ 1.Descendants inherit style from the ancestors
+  2.saves time and effort
+  3.Some properties are not inherited
+        placement tags
+         Borders
+         Margins
+        Background colors
+  4.when there are conflicts,they are resolved by the specificity rules
+fonts:-
+serif
+san-serif
+ 
+web-fonts:-
+download font but these are creating some conflict
+google-fonts
+jazzing up text:-
+font-size:
+               em & percentage (.5 em=50%)
+               px
+               keywords(large,small,medium,x-large)
+font-color:
+              rgb
+              rgba
+font-style:
+            italic 
+            bold
+            normal
+capitalize -(text-transfermation):
+              uppercase
+              lowercase
+              capitalize(first letter capital)
+              font-variant -->for small caps
+              text-decoration -->for underline r overline
+kerning
+           Space between the letters/words
+leading
+        line-height:128%
+margin,border and padding:-
+understanding boxes:
+                                       A paragraph is a box
+                                       An image is a box
+                                       each tag is a box
+                                       boxes with in boxes
+Margin :
+                The space that separates the boxes
+Padding :
+                The space between the border and the content
+Border :
+               The line around each edge of  the box
+                border apply for all dimensions
+                border-top/bottom/right/left  for individual sides
+                border-style for styling
+                border-color for give color to border
+                border-width for set the width
+                border-radius for round corner
+block level tags :- <p> , <div>
+inline tags :-  <strong> ,<em> , <image>
+    
+we can apply margins and padding both block level and inline tags
+But inline boxes do not have top and bottom margins
+
+Navigation bar:-
+   navigation bar is a set of links(list of diff areas)
+   list call for <ul>
+    remove the bullets (list-style-type:none)
+    eliminate padding and margin
+   set the display to inline block to eliminate new line 
