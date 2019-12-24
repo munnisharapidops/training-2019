@@ -1,0 +1,419 @@
+////////////////////////////INTRODUCTION/////////////////////////////
+variables:-
+    naming storage
+variable names can not be starts with number r special characters
+There are two limitations on variable names in JavaScript:
+The name must contain only letters, digits, or the symbols $ and _.
+The first character must not be a digit.
+When the name contains multiple words, camelCase is commonly used. That is: words go one after another, each word except first starting with a capital letter: myVeryLongName.
+
+What’s interesting – the dollar sign '$' and the underscore '_' can also be used in names. They are regular symbols, just like letters, without any special meaning.
+
+There is a list of reserved words, which cannot be used as variable names because they are used by the language itself.
+
+For example: let, class, return, and function are reserved.
+
+
+Constants:-
+we can not change able to change the value of constant
+declare with const key word 
+Data types:-
+There are eight basic data types in JavaScript.
+number
+bigint
+String
+boolean
+null
+undefined
+objectes and symbol
+type f operator
+   
+      number:-
+           The number type represents both integer and floating point numbers.
+                   There are many operations for numbers, e.g. multiplication *, division /, addition +, subtraction -, and so on.
+   Besides regular numbers, there are so-called “special numeric values” which also belong to this data type: Infinity, -                                Infinity and NaN.
+    Infinity represents the mathematical Infinity ∞. It is a special value that’s greater than any number.
+     We can get it as a result of division by zero:
+             console.log(1/0);  /// infinity
+
+string:-
+      A string in JavaScript must be surrounded by quotes.
+          let str="munni";
+          let str2='priya';
+ In JavaScript, there are 3 types of quotes.
+Double quotes: "Hello".
+Single quotes: 'Hello'.
+Backticks: `Hello`.
+Double and single quotes are “simple” quotes. There’s practically no difference between them in JavaScript.
+Backticks are “extended functionality” quotes. They allow us to embed variables and expressions into a string by wrapping them in ${…}, for example:
+Boolean:-
+The boolean type has only two values: true and false.
+This type is commonly used to store yes/no values: true means “yes, correct”, and false means “no, incorrect”.
+
+
+null:-
+The special null value does not belong to any of the types described above.
+It forms a separate type of its own which contains only the null value: 
+  let val=null;
+
+In JavaScript, null is not a “reference to a non-existing object” or a “null pointer” like in some other languages.
+It’s just a special value which represents “nothing”, “empty” or “value unknown”.
+The code above states that age is unknown or empty for some reason.
+objects:-
+The object type is special.
+All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever). In contrast, objects are used to store collections of data and more complex entities.
+Type Conversions:-
+Sting Conversions
+let value=true;
+console.log(typeof value); // boolean
+let value2=String(true);
+console.log(typeof value2);  // true
+         String conversion is mostly obvious. A false becomes "false", null becomes "null", etc.
+
+Numeric conversions
+         Numeric conversion happens in mathematical functions and expressions automatically.
+         For example, when division / is applied to non-numbers:
+
+           console.log("6" /"3"); //  2 Sting converted into numbers
+
+           console.log(Number("  123  "));  //123
+           console.log(Number('123asd"));  // NaN 
+   console.log(Number('true "));  //1 if false 0
+
+Please note that null and undefined behave differently here: null becomes zero while undefined becomes NaN.
+
+let val = null;
+
+console.log(Number (val)); // 0
+
+let val =undefined;
+
+console.log(Number(val)); // null
+
+
+NOTE:-
+
+ undefined --->Nan 
+
+null              ----> 0
+
+true/false  -----> 1/0
+
+string          -----> remove white spaces from starting and ending.Any error NAN
+
+
+Boolean Conversions
+Values that are intuitively “empty”, like 0, an empty string, null, undefined, and NaN, become false.
+Other values become true.
+console.log(Boolean(1));  // true if 0 false
+console.log(Boolean("")); // return flase
+console.log(Boolean("  ")); // true
+console.log(Boolean("hello/ empty / anystring"));   // true
+NOTE:-
+0,null,undefined,Nan,""    ------>    FALSE
+any other  -----> TRUE
+Operators:-
+string concatination binary+
+       consloe.log("good" +" " + "morning"); // good morning
+       console.log('2'+3) // 23
+       console.log(2+'2'); //22
+       console.log("2"+'4'+6); // 246
+However, note that operations run from left to right. If there are two numbers followed by a string, the numbers will be added before being converted to a string:
+      console.log(2+2+'3')   // 43
+      console.log("3" +4+4) // 344
+String concatenation and conversion is a special feature of the binary plus +. Other arithmetic operators work only with numbers and always convert their operands to numbers.
+      console.log(2-'1')  ; '// 1
+      console.log("6"/"3" ) ; // 2
+Numeric conversion  unary+
+unary pluses are applied first, they convert strings to numbers, and then the binary plus sums them up.
+unary has heigher preceedence than binary
+let apple="2";
+let banana="3";
+console.log(apple +banana);  // 23
+console.log(+apple + +banana); // 5
+Assignment
+exponential
+increment
+decrement
+Bitwise 
+The list of operators:
+
+AND ( & )
+OR ( | )
+XOR ( ^ )
+NOT ( ~ )
+LEFT SHIFT ( << )
+RIGHT SHIFT ( >> )
+ZERO-FILL RIGHT SHIFT ( >>> )
+Comparisions:-
+Compare to upper case letters 'A-Z' lower case letters 'a-z' have higher priority
+console.log('2' > 1);  // true string 2 converted into number
+console.log("01" == 1 ) ;  // true
+console.log(0==false); // true
+A strict equality operator === checks the equality without type conversion.
+ console.log(0===false); // flase
+There’s a non-intuitive behavior when null or undefined are compared to other values.
+
+For a strict equality check ===
+These values are different, because each of them is a different type.
+
+console.log(null=== undefined); // flase
+For a non-strict check ==
+There’s a special rule. These two are a “sweet couple”: they equal each other (in the sense of ==), but not any other value.
+
+console.log(null==undefined); // true
+For maths and other comparisons < > <= >=
+null/undefined are converted to numbers: null becomes 0, while undefined becomes NaN.
+
+console.log(null>0); // false
+console.log(null ==0); // flase
+console.log(null>=0); // true
+console.log(undefined > 0); // flase
+console.log(undefined ==0);  //false
+console.log(undefined >=0); //flase
+ only null and undefined are equall no other values
+
+////////////////////////OBJECTS///////////////////////////////
+objects:-
+let user= new object(); //  "object constructor"
+let user={...};   // object lite
+get property
+console.log(object.property-name)
+--->we can delete property using delete operator
+    delete object.property-name
+---> multi word property  can ad using quotes
+    let user{
+         name:"sunny",
+         "roll num":323,
+}
+--->For multiword properties, the dot access doesn’t work:
+       console.log(object["property-name"])  //    console.log(user["roll num"]);
+--->reserverd words are allowed as property names
+--->There also exists a special operator "in" to check for the existence of a property.
+      " key"  in object
+A variable stores not the object itself, but its “address in memory”, in other words “a reference” to it.
+An object declared as const can be changed.
+object.assign can add the properties into objects
+object.assign(object,{properties.....});
+Symbol type:-
+Object property only strings or symbols
+A “symbol” represents a unique identifier.
+A value of this type can be created using Symbol():
+Symbols are guaranteed to be unique. Even if we create many symbols with the same description, they are different values. The description is just a label that doesn’t affect anything.
+let id1=Symbol("id");
+console.log(id1.toSting());  //Symbol("id")
+console.lod(id1.decription);  // only display description of the String - id
+let id2=Symbol("id");
+console.log(id1==id2);  //false
+Symbols don't auto convert to a string
+Object methods: this-
+
+To access the object, a method can use the this keyword.
+The value of this is the object “before dot”, the one used to call the method.
+
+let user={
+name:'sunny',
+age:22,
+sayHi(){
+ console.log("hello" + "  " + this.name);
+}
+};
+user.sayHi();  // hello sunny
+If we decide to copy user to another variable, e.g. admin = user and overwrite user with something else, then it will access the wrong object.
+
+
+Constructor function:-
+They are named with capital letter first.
+They should be executed only with "new" operator.
+
+     function User(name){
+       this.name=name;
+       this.age=22;
+}
+let user = new User("sajan");
+console.log(user.name); //sajan
+console.log(user.age);   //22  
+  
+When a function is executed with new, it does the following steps:
+
+A new empty object is created and assigned to this.
+The function body executes. Usually it modifies this, adds new properties to it.
+The value of this is returned.
+
+
+
+//////////////////////////////////DATA TYPES///////////////////
+A primitive
+
+Is a value of a primitive type.
+There are 6 primitive types: string, number, boolean, symbol, null and undefined.
+
+An object
+
+Is capable of storing multiple values as properties.
+Can be created with {}, for instance: {name: "John", age: 30}. There are other kinds of objects in JavaScript: functions, for example, are objects.
+Objects are “heavier” than primitives. They require additional resources to support the internal machinery.
+
+Numbers:-
+In modern JavaScript, there are two types of numbers:
+
+Regular numbers in JavaScript are stored in 64-bit format IEEE-754, also known as “double precision floating point numbers”. These are numbers that we’re using most of the time, and we’ll talk about them in this chapter.
+BigInt numbers, to represent integers of arbitrary length. They are sometimes needed, because a regular number can’t exceed 253 or be less than -253. As bigints are used in few special areas, we devote them a special chapter BigInt.
+In JavaScript, we shorten a number by appending the letter "e" to the number and specifying the zeroes count
+        console.log(3e4); // 30000
+     1e-3 =1/1000=0.001
+Rounding:-
+ math.floor  : rounds down
+                          let num=3.5; 
+                          console.log(Math.florr(num));   // 3
+Math.ceil: Rounds Up
+                        console.log(Math.ceil(num));  // 4
+Math.round : Rounds nearer
+                           console.log(Math.log(num));  //  4
+Math.trunc  : Removes after decimal point without rounding 
+                        console.log(Math.trunc(num));  // 3
+Parse int and parse-Float:-
+The function parseInt returns an integer, whilst parseFloat will return a floating-point number:
+console.log(parseInt(12.3));   // 12
+console.log(parseFloat(12.3.4));  // 12.3 
+console.log(parseInt('a123')); // NaN
+Strings:-
+length:-
+console.log('munni'.length);  //5
+let str='jasmine';
+console.log(str.chatAt(2)); //  S
+Strings are immutable
+change case using 
+         toLowerCase()  
+         toUpperCase()
+charAt:-
+    Display the index letter
+     let char="hello Sunny";
+    console.log(char.charAt(6));   // S
+indexOf():-
+str.indexOf() --> search for a sub string
+         let str2=" i am sajan";
+         console.log(str2.indexOf('sajan'));  //5
+lastindexOf():-
+      
+     The optional second parameter allows us to search starting from the given position.
+     There is also a similar method str.lastIndexOf(substr, position) that searches from the end of a string to its beginning.
+    slice():-
+
+The slice() method extracts parts of a string and returns the extracted parts in a new string.
+Use the start and end parameters to specify the part of the string you want to extract.
+The first character has the position 0, the second has position 1(second position is not shown)
+
+      let name="rapidops";
+     console.log(name.slice(1,4));  // apid
+ 
+split:-
+   split the sting 
+  let stng="hello world good morning";
+   console.log(stng.split('  '));   //   ['hello','world','good',morning']
+ console.log(stng.split('  ',2));   // ['hello', 'world']
+includes:-
+The includes() method determines whether a string contains the characters of a specified string.
+
+This method returns true if the string contains the characters, and false if not.
+concat:-
+  combine 2 strings
+let con=['1,2,3,4];
+console.log(con.concat([5,6]); //  ['1,2,3,4,5,6']
+replace:
+search for a specific string and replace that with new string
+  let replc="sunny sankar";
+   console.log(replc.replace("sankar","jasmine");  sunny jasmine
+search:-
+
+The search() method searches a string for a specified value, and returns the position of the match.
+The search value can be string or a regular expression.
+This method returns -1 if no match is found.
+
+ let replc="sunny sankar";
+   console.log(replc.search("sankar"));   // 6
+match:-
+The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object.
+   let compare="i like roses.roses are in red color";
+    let reg=/[.]/g;
+    console.log(compare.match(reg)); //   ['.']
+Arrays:-
+pop : removes an element from the end
+            let fruits=['apple','banana','orange'];
+             console.log(fruits.pop());
+push add an element at the end
+shift: add an element at the bigining
+ The method arr.reverse reverses the order of elements in arr.
+split : split a string into an array of elements
+join : join an array of elements 
+
+sort:-
+  sort an array
+ let arr=[1,3,2,5,4];
+console.log(arr.sort());  // [1,2,3,4,5]
+map:-
+
+The map() method creates a new array with the results of calling a function for every array element.
+The map() method calls the provided function once for each element in an array, in order.
+let newarr=[4,9];
+let arr=newarr.map(Math.sqrt);
+console.log(arr);   // [2,3]
+find:-
+The find() method returns the value of the first element in an array that pass a test (provided as a function).
+The find() method executes the function once for each element present in the array:
+
+If it finds an array element where the function returns a true value, find() returns the value of that array element (and does not check the remaining values)
+Otherwise it returns undefined
+
+Note: find() does not execute the function for empty arrays.
+Note: find() does not change the original array.
+
+
+let sample=[2,22,4,15];
+let result =sample.find(elements => elements>10);
+console.log(result); // [22]   fliter print ['22,15']
+filter:-
+
+The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+Note: filter() does not execute the function for array elements without values.
+Note: filter() does not change the original array.
+
+
+some:-
+
+The some() method checks if any of the elements in an array pass a test (provided as a function).
+The some() method executes the function once for each element present in the array:
+
+If it finds an array element where the function returns a true value, some() returns true (and does not check the remaining values)
+Otherwise it returns false
+ 
+every:-
+
+The every() method checks if all elements in an array pass a test (provided as a function).
+
+The every() method executes the function once for each element present in the array:
+
+If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values)
+If no false occur, every() returns true
+map:-
+it  is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+Methods and properties are:
+new Map() – creates the map.
+map.set(key, value) – stores the value by the key.
+map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
+map.has(key) – returns true if the key exists, false otherwise.
+map.delete(key) – removes the value by the key.
+map.clear() – removes everything from the map.
+map.size – returns the current element count.
+To test keys for equivalence, Map uses the algorithm SameValueZero. It is roughly the same as strict equality ===, but the difference is that NaN is considered equal to NaN. So NaN can be used as the key as well.
+Set:-
+A Set is a special type collection – “set of values” (without keys), where each value may occur only once.
+
+Its main methods are:
+
+new Set(iterable) – creates the set, and if an iterable object is provided (usually an array), copies values from it into the set.
+set.add(value) – adds a value, returns the set itself.
+set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
+set.has(value) – returns true if the value exists in the set, otherwise false.
+set.clear() – removes everything from the set.
+set.size – is the elements count.
