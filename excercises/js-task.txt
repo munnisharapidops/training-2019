@@ -1,0 +1,512 @@
+1. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​ the​ ​ first​ ​ and​ ​ last​ ​ element​ ​ of​ ​ an​ ​ array.​ ​ Passing​ ​ a parameter​ ​ 'n'​ ​ will​ ​ return​ ​ the​ ​ first​ ​ 'n'​ ​ elements​ ​ of​ ​ the​ ​ array​ ​ and​ ​ last​ ​ ‘n’​ ​ elements​ ​ of​ ​ the array.
+
+ let first =  function(fruits, n) {
+    if (fruits == null)
+    return void 0;
+  if (n == null)
+    return  fruits[0];
+    // return  fruits[fruits.length-1];
+  if (n < 0)
+    return [];
+  return fruits.slice(0, n);
+
+};
+
+console.log(first(['apple','banana','mango','oranges']));
+console.log(first(['apple','banana','mango','oranges'],2));
+
+var last =  function(array, n) {
+    if (array == null)
+      return void 0;
+    if (n == null)
+       return array[array.length - 1];
+    return array.slice(Math.max(array.length - n, 0));
+    };
+  console.log(last(['apple','banana','mango','oranges']));
+
+  console.log(last(['apple','banana','mango','oranges'],2));
+
+/////////////////////////////////////////////////////////////
+
+2. Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ which​ ​ accept​ ​ a ​ ​ number​ ​ as​ ​ input​ ​ and​ ​ insert​ ​ dashes​ ​ (-) between​ ​ each​ ​ two​ ​ even​ ​ numbers.
+   function insertHyphen(str) {
+    let strArr = str.split('');
+    let numArr = strArr.map(Number);
+    let result ="";
+    for(var i = 0; i < numArr.length; i++) {
+     if((numArr[i+1]!==undefined)&&(numArr[i]%2===0 && numArr[i+1]%2===0)) {
+          //numArr.push('-');
+          result = result + numArr[i] + "-";
+      }else{
+          result = result + numArr[i];
+      }
+    }
+    return result;
+  }
+  console.log(insertHyphen('02456'));
+
+
+  //////////////////////////////
+  console.log("/*******/");
+  const num=window.prompt();
+  const str = num.toString();
+  const result = [str[0]];
+for(let x=1; x<str.length; x++)
+  {
+    if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+     {
+      result.push('-', str[x]);
+     }
+    else
+     {
+      result.push(str[x]);
+     }
+  }
+console.log(result.join(''));
+
+
+/////////////////////////////////////////////////////////////////////
+
+3. Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ to​ ​ find​ ​ the​ ​ most​ ​ frequent​ ​ item​ ​ of​ ​ an​ ​ array.
+
+//let arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+let arr1=['sunny','jasmine','sunny','sunny','sunny'];
+let frequent_item = 1;
+let m = 0;
+let item;
+for (let i=0; i<arr1.length; i++)
+{
+        for (let j=i; j<arr1.length; j++)
+        {
+                if (arr1[i] == arr1[j])
+                 m++;
+                if (frequent_item<m)
+                {
+                    frequent_item=m;
+                  item = arr1[i];
+                }
+        }
+        m=0;
+}
+//console.log(item+" ( " +frequent_item +" times ) ") ;
+console.log(`${item} ( ${frequent_item} times ) `) ;
+
+
+///////////////////////////////////////////////////////////////
+
+
+4. Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ to​ ​ shuffle​ ​ an​ ​ array.
+function shuffle(array) {
+    let random = array.length, temp, index;
+    while (random > 0) {
+        index = Math.floor(Math.random() * random);
+        random--;
+        temp = array[random];
+        array[random] = array[index];
+        array[index] = temp;
+    }
+    return array;
+}
+let myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(shuffle(myArray));
+
+
+//////////////////////////////////////////////////////////////
+
+
+5. Write​ ​ a ​ ​ JavaScript​ ​ program​ ​ to​ ​ compute​ ​ the​ ​ union​ ​ of​ ​ two​ ​ arrays,​ ​ and​ ​ Write​ ​ a ​ ​ JavaScript function​ ​ to​ ​ find​ ​ the​ ​ difference​ ​ of​ ​ two​ ​ arrays.
+console.log("/****union of 2 arrays***/")
+function union(arra1, arra2) {
+  if ((arra1 == null) || (arra2==null))
+    return 0;
+  let obj = {};
+  for (let i = arra1.length-1; i >= 0; -- i)
+     obj[arra1[i]] = arra1[i];
+  for (var i = arra2.length-1; i >= 0; -- i)
+     obj[arra2[i]] = arra2[i];
+  let res = [];
+  for (let n in obj)
+  {
+    if (obj.hasOwnProperty(n))
+      res.push(obj[n]);
+  }
+  return res;
+}
+console.log("union array");
+console.log( union([1, 2, 3], [100, 2, 1, 10]));
+
+
+/////////////////////////////////////////////
+console.log("/****difference between 2 arrays");
+function arrayDiff (array1, array2) {
+    let temp = [];
+    array1 = array1.toString().split(',').map(Number);
+    array2 = array2.toString().split(',').map(Number);
+    for (let i in array1) {
+    if(array2.indexOf(array1[i]) === -1) temp.push(array1[i]);
+    }
+    for(i in array2) {
+    if(array1.indexOf(array2[i]) === -1) temp.push(array2[i]);
+    }
+    return temp.sort((a,b) => a-b);
+    }
+    console.log(arrayDiff([1, 2, 3], [100, 2, 1, 10]));
+
+///////////////////////////////////////////////////////////////////
+
+
+6. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ fill​ ​ an​ ​ array​ ​ with​ ​ values​ ​ (numeric,​ ​ string​ ​ with​ ​ onecharacter)​ ​ on​ ​ supplied​ ​ bounds.
+console.log(num_string_range('a',​ ​ "z",​ ​ 2));
+["a",​ ​ "c",​ ​ "e",​ ​ "g",​ ​ "i",​ ​ "k",​ ​ "m",​ ​ "o",​ ​ "q",​ ​ "s",​ ​ "u",​ ​ "w",​ ​ "y"]
+
+function num_string_range(start, end, step)
+  {
+    var range = [];
+    if ((step === 0) || (typeof start == "undefined" || typeof end ==    "undefined") || (typeof start != typeof end))
+     return false;
+    if (end < start) {
+        step = -step;
+    }
+
+    if (typeof start == "number") {
+
+        while (step > 0 ? end >= start : end <= start) {
+            range.push(start);
+            start += step;
+        }
+        }
+      else if (typeof start == "string") {
+
+        if (start.length != 1 || end.length != 1) {
+            throw TypeError("Strings with one character are supported.");
+        }
+
+        start = start.charCodeAt(0);
+        end = end.charCodeAt(0);
+
+        while (step > 0 ? end >= start : end <= start) {
+            range.push(String.fromCharCode(start));
+            start += step;
+        }
+
+    }
+     else
+       {
+        throw TypeError("Only string and number are supported");
+        }
+
+    return range;
+
+}
+
+console.log(num_string_range('a', "z", 2));
+console.log(num_string_range("Z", "A", 2));
+console.log(num_string_range(0, -5, 1));
+console.log(num_string_range(0, 25, 5));
+console.log(num_string_range(20, 5, 5));
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+7. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​ the​ ​ month​ ​ name​ ​ from​ ​ a ​ ​ particular​ ​ date.
+
+let month_name = function(date){
+month_list = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+  return month_list[date.getMonth()];
+};
+console.log(month_name(new Date("7/11/2009")));
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+8. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​ difference​ ​ between​ ​ two​ ​ dates,​ ​ from​ ​ maximum​ ​ unit​ ​ to minimum​ ​ unit.
+
+function find_diff(d1,d2){
+let date1 = new Date(d1);
+  let date2 = new Date(d2);
+// To calculate the time difference of two dates
+let Difference_In_Time = date2.getTime() - date1.getTime();
+// To calculate the no. of days between two dates
+let Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+//To display the final no. of days (result)
+console.log("Total number of days between dates:"+ "  "+
+               + Difference_In_Days);
+            }
+
+find_diff("07/11/2019","10/02/2019")
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+9. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ convert​ ​ a ​ ​ Unix​ ​ timestamp​ ​ to​ ​ time.
+
+function timeConverter(UNIX_timestamp){
+  let a = new Date(UNIX_timestamp * 1000);
+  let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let year = a.getFullYear();
+  let month = months[a.getMonth()];
+  let date = a.getDate();
+  let hour = a.getHours();
+  let min = a.getMinutes();
+  let sec = a.getSeconds();
+  let time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+  return time;
+}
+console.log(timeConverter(10637282 ));
+
+10. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ get​ ​ time​ ​ differences​ ​ in​ ​ years,​ ​ months,​ ​ weeks,​ ​ days,​ ​ hours and​ ​ minutes​ ​ between​ ​ two​ ​ dates.
+
+today = new Date()
+past = new Date(2018,06,11) // remember this is equivalent to 06 01 2010
+//dates in js are counted from 0, so 05 is june
+
+function calcDate(date1,date2) {
+    let diff = Math.floor(date1.getTime() - date2.getTime());
+    let day = 1000 * 60 * 60 * 24;
+
+    let days = Math.floor(diff/day);
+    let months = Math.floor(days/31);
+    let years = Math.floor(months/12);
+
+    let message = date2.toDateString();
+    message += " was "
+    message += days + " days "
+    message += months + " months "
+    message += years + " years ago \n"
+
+    return message;
+    }
+
+
+a = calcDate(today,past);
+console.log(a) ;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+11. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ hide​ ​ email​ ​ addresses​ ​ to​ ​ protect​ ​ from​ ​ unauthorized​ ​ user."​ abc...@example.com​ "
+
+protect_email = function (user_email) {
+    let avg, splitted, part1, part2;
+    splitted = user_email.split("@");
+    part1 = splitted[0];
+    avg = part1.length / 2;
+    part1 = part1.substring(0, (part1.length - avg));
+    part2 = splitted[1];
+    return part1 + "...@" + part2;
+};
+
+console.log(protect_email("yoursmunnisha@example.com"));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+12. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ insert​ ​ a ​ ​ string​ ​ within​ ​ a ​ ​ string​ ​ at​ ​ a ​ ​ particular​ ​ position (default​ ​ is​ ​ 1).
+
+insert = function insert(main_string, ins_string, pos) {
+    if(typeof(pos) == "undefined") {
+     pos = 0;
+   }
+    if(typeof(ins_string) == "undefined") {
+     ins_string = '';
+   }
+    return main_string.slice(0, pos) + ins_string + main_string.slice(pos);
+     }
+ console.log(insert('We are doing some exercises.'));
+ console.log(insert('We are doing some exercises.','JavaScript '));
+ console.log(insert('We are doing some exercises.','JavaScript ',18));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+13. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ chop​ ​ a ​ ​ string​ ​ into​ ​ chunks​ ​ of​ ​ a ​ ​ given​ ​ length.
+console.log(string_chop('RapidOpsSolution’',2));
+["Ra",​ ​ "pi",​ ​ "dO",​ ​ "ps",​ ​ "So",​ ​ ”lu”,​ ​ “ti”,​ ​ “on”]
+
+string_chop =  function(str, size){
+      if (str == null)
+      return [];
+      str = String(str);
+      size = ~~size;  // ~~ fastest trimming operator
+      return size > 0 ? str.match(new RegExp('.{1,' + size + '}', 'g')) : [str];
+}
+console.log(string_chop('rapidops'));
+console.log(string_chop('Rapidops',2));
+console.log(string_chop('Rapidops',3));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+14. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ remove​ ​ HTML/XML​ ​ tags​ ​ from​ ​ string.
+'<p><strong><em>Javascript​ ​ Exercises</em></strong></p>
+“Javascript​ ​ Exercises”
+
+function strip_html_tags(str)
+{
+   if ((str===null) || (str===''))
+       return false;
+  else
+   str = str.toString();
+  return str.replace(/<[^>]*>/g, '');
+}
+
+console.log(strip_html_tags('<html>PHP Exercises</html>'));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+15. Write​ ​ a ​ ​ pattern​ ​ that​ ​ matches​ ​ e-mail​ ​ addresses.
+
+function valid_email(str)
+{
+let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(mailformat.test(str))
+{
+console.log("Valid email address!");
+}
+else
+{
+console.log("You have entered an invalid email address!");
+}
+}
+
+valid_email('me-infoample.com');
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+16. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ print​ ​ an​ ​ integer​ ​ with​ ​ commas​ ​ as​ ​ thousands​ ​ separators.
+
+function thousands_separators(num)
+  {
+    let num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
+
+console.log(thousands_separators(1000));
+console.log(thousands_separators(10000.23));
+console.log(thousands_separators(10000000));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+17. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ that​ ​ creates​ ​ a ​ ​ table,​ ​ accept​ ​ row,​ ​ column​ ​ numbers​ ​ from​ ​ the user,​ ​ and​ ​ input​ ​ row-column​ ​ number​ ​ as​ ​ content​ ​ (e.g.​ ​ Row-0​ ​ Column-0)​ ​ of​ ​ a ​ ​ cell.
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Create a table</title>
+        <style type="text/css">
+        body {margin: 30px;}
+        </style>
+    </head>
+    <body>
+            <script src="task17.js">
+            function createTable()
+{
+rn = window.prompt("Input number of rows", 1);
+cn = window.prompt("Input number of columns",1);
+
+ for(var r=0;r<parseInt(rn,10);r++)
+  {
+   var x=document.getElementById('myTable').insertRow(r);
+   for(var c=0;c<parseInt(cn,10);c++)
+    {
+     var y=  x.insertCell(c);
+     y.innerHTML="Row-"+r+" Column-"+c;
+    }
+   }
+}
+
+createTable()
+          </script>
+        <table id="myTable" border="1">
+        </table>
+        <form>
+        <input type="button" onclick="createTable()" value="Create the table">
+        </form>
+    </body>
+</html>
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+18. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ print​ ​ array​ ​ of​ ​ object​ ​ in​ ​ ascending​ ​ order​ ​ on​ ​ age,descending​ ​ order​ ​ on​ ​ name.​ ​ (Make​ ​ array​ ​ of​ ​ object​ ​ with​ ​ three​ ​ fields​ ​ are​ ​ 1.​ ​ Id,​ ​ 2.​ ​ Name,​ ​ 3.age)​ ​ NOTE:​ ​ Array​ ​ have​ ​ minimum​ ​ 10​ ​ objects.
+
+let obj=[
+    {
+        id:1,
+        name:'honey',
+        age:12,
+    },
+    {
+        id:2,
+        name:'soha',
+        age:36,
+    },
+    {
+        id:3,
+        name:'sunny',
+        age:22,
+    },
+    {
+        id:4,
+        name:'jasmine',
+        age:19,
+    },
+    {
+        id:5,
+        name:'janu',
+        age:15,
+    },
+    {
+        id:6,
+        name:'sankar',
+        age:25,
+    },
+    {
+        id:7,
+        name:'rosy',
+        age:2,
+    },
+    {
+        id:8,
+        name:'sana',
+        age:40,
+    },
+    {
+        id:9,
+        name:'aisu',
+        age:10,
+    },
+    {
+        id:10,
+        name:'sajan',
+        age:73,
+    },
+
+];
+
+obj.sort(function (a,b){
+    return a.age-b.age;
+})
+console.log(obj);
+console.log("/***sort names***/");
+function compare(a, b) {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+    let comparison = 0;
+    if (nameA > nameB) {
+      comparison = 1;
+    } else if (nameA < nameB) {
+      comparison = -1;
+    }
+    return comparison * -1;  ///* -1 return in descending order
+  }
+  console.log(obj.sort(compare));
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+19. Write​ ​ a ​ ​ JavaScript​ ​ function​ ​ to​ ​ delete​ ​ particular​ ​ object​ ​ from​ ​ array​ ​ and​ ​ add​ ​ new​ ​ object​ ​ at particular​ ​ position.
+
+let array=[1,2,5,9];
+    array.splice(2,0,3,4);
+    console.log(array);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
