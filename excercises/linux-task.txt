@@ -10,6 +10,10 @@
    rm *file ---> to delete *file
    rm $ file ---> to delete $ file
 
+   ///////////////// to delete all files at a time/////////////////////
+   find . -type f -name "*[#^(@%]*" -delete -----> to delete all files at a time those are present special charactes in file name 
+  cat file1.txt | tr -d '\@$&%' > new_sample_file.txt ----->  delete all special charactes present in file content
+
 
 3.Write a shell script that take two input numbers from user at runtime and display arithmetic
     operation on that numbers, find out max, & min number from them, find weather that numbers
